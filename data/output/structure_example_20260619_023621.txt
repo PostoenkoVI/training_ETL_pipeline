@@ -1,0 +1,152 @@
+cleaned.customers: 700
+id,customer_id,full_name,email,phone,city,created_at,row_hash
+1,463,Милица Степановна Федорова,elizarabramov@yandex.ru,,ст. Вязьма,2023-08-27,0047f7494a3e820e715edef3ea0c8579
+2,64,Клавдия Никифоровна Самойлова,ktretjakova@ao.info,9803079055,г. Комсомольск-на-Амуре,2025-10-07,007b12a10c5d4b9ab88cb0a1f4a2e619
+3,211,Кондратий Владиленович Комаров,dementi_2006@yandex.ru,9741139461,к. Туапсе,2024-10-26,00bbe267c45dc82f3478b3bacaca8b9c
+4,152,Сидорова Дарья Рубеновна,pestovkallistrat@yandex.ru,9415985367,с. Старая Русса,2026-04-23,00c7895e6131a9229fb12024625d95da
+5,663,Тимофеева Феврония Ниловна,ljubomir34@rao.org,9255365396,с. Бугуруслан,2024-03-09,01362db00353aa128e3cbed573970587
+
+cleaned.products: 600
+id,product_id,product_name,category,price,currency,is_active,row_hash
+1,536,Коллектив,Clothing,360.25,USD,False,00bb92fbbc92764986b10e0ab0f57dc3
+2,65,Доставать,Clothing,764.24,EUR,True,01143d56cc43a9aa34650dff08d49f5f
+3,80,Растеряться,Home,299.75,EUR,False,02bc2d1f7a1055e4c20253531e11b1a6
+4,585,Упорно,Sports,806.03,EUR,True,02fb712b5f1e20d85839f0eaed4be201
+5,26,Рай,Sports,1663.99,RUB,True,03032b9e6345e3d9dab7d55c3505ea8b
+
+cleaned.payments: 1000
+id,payment_id,order_id,payment_method,amount,currency,payment_timestamp,row_hash
+1,667,858,,861.19,USD,2024-10-06 18:49:34,0052c3f5dea44714569e13078d359c23
+2,760,326,paypal,1975.47,USD,2025-08-03 14:19:42,0058d4a1dd025edf59f7ca48926d7cc0
+3,724,919,,1983.47,EUR,2024-07-05 04:09:45,00bbf8b9efaff14f20b952c44ca6e4b0
+4,436,513,bank_transfer,978.52,RUB,2025-08-29 01:35:33,00db8ff735ef06e4aa48fe082f097297
+5,968,196,card,992.79,EUR,2025-11-04 05:50:52,00e0ef65d96747c1ee374231291f07eb
+
+cleaned.orders: 1200
+id,order_id,customer_id,product_id,quantity,unit_price,currency,order_timestamp,status,row_hash
+1,1101,151,235,1,109.91,EUR,2024-10-12 23:22:19,processing,0040fa78c5314d30e6e3117631c5e93e
+2,655,278,74,3,81.71,RUB,2024-08-17 08:34:55,cancelled,007913ab423dbe268cf556181a270800
+3,139,126,451,2,27.58,USD,2025-03-12 13:19:35,processing,00a8540f3699e88d95ccb478471faab5
+4,1008,385,359,5,104.89,EUR,2025-12-20 08:05:31,processing,00ad96a5f10f5a3c1800ba1c9d2b0b8d
+5,511,,577,5,336.83,EUR,2026-03-08 08:04:01,completed,00ea0cc20a00be268c57b52de83d7455
+
+cleaned.events: 1501
+id,event_id,customer_id,event_type,event_timestamp,product_id,row_hash
+1,1423,298,logout,2025-08-19 14:21:50,229,007badac1ddddc2a9cf3045e8e1fa37b
+2,342,742,purchase,2026-03-06 15:54:56,370,007ebe80a34836d9ae24627b85716495
+3,542,444,view,2024-10-19 16:39:25,637,009c64b5342684224d11157004e0b3a7
+4,1017,17,click,2024-09-08 07:26:37,355,00c147f87d085f5d07935a7f8bd9939f
+5,214,530,view,2026-02-05 04:57:02,585,00d091c6f92b1fccaf881f89af4d6281
+
+logs.rejected_records: 21469
+id,source_table,load_datetime,raw_payload,error_details
+1,customers,2026-06-19 01:56:45.567749,{'id': 463, 'city': 'ст. Вязьма', 'email': 'elizarabramov@yandex.ru', 'phone': 'UNKNOWN', 'row_hash': '0047f7494a3e820e715edef3ea0c8579', 'full_name': 'Милица Степановна Федорова', 'created_at': '2023-08-27', 'customer_id': '463'},{'level': 'warn', 'reason': 'invalid_descriptive_attributes', 'details': {'city_format': 'valid', 'email_format': 'valid', 'phone_format': 'invalid unknown', 'num_duplicates': 1, 'full_name_format': 'valid', 'created_at_format': 'yyyy-mm-dd'}}
+2,customers,2026-06-19 01:56:45.567749,{'id': 515, 'city': 'п. Надым', 'email': 'abramovaraisa@npo.ru', 'phone': 'UNKNOWN', 'row_hash': '0270814ac755930393de58ed9d77df74', 'full_name': 'Юрий Фадеевич Блинов', 'created_at': '2025-01-04', 'customer_id': '515'},{'level': 'warn', 'reason': 'invalid_descriptive_attributes', 'details': {'city_format': 'valid', 'email_format': 'valid', 'phone_format': 'invalid unknown', 'num_duplicates': 1, 'full_name_format': 'valid', 'created_at_format': 'yyyy-mm-dd'}}
+3,customers,2026-06-19 01:56:45.567749,{'id': 385, 'city': 'к. Канск', 'email': 'varfolome_20@npo.info', 'phone': None, 'row_hash': '03cc7bea733a606ff7e27f25f87de4c2', 'full_name': 'Комиссаров Кирилл Измаилович', 'created_at': '2025-01-10', 'customer_id': '385'},{'level': 'warn', 'reason': 'invalid_descriptive_attributes', 'details': {'city_format': 'valid', 'email_format': 'valid', 'phone_format': 'invalid null', 'num_duplicates': 1, 'full_name_format': 'valid', 'created_at_format': 'yyyy-mm-dd'}}
+4,customers,2026-06-19 01:56:45.567749,{'id': 552, 'city': 'с. Сусуман', 'email': 'osip1973@ooo.biz', 'phone': None, 'row_hash': '03ee930aa71c78ce633c25b49dd46841', 'full_name': '  ivan IVANOV ', 'created_at': '2026-04-11', 'customer_id': '552'},{'level': 'warn', 'reason': 'invalid_descriptive_attributes', 'details': {'city_format': 'valid', 'email_format': 'valid', 'phone_format': 'invalid null', 'num_duplicates': 1, 'full_name_format': 'invalid placeholder', 'created_at_format': 'yyyy-mm-dd'}}
+5,customers,2026-06-19 01:56:45.567749,{'id': 320, 'city': 'д. Рубцовск', 'email': 'baranovorest@yandex.ru', 'phone': 'UNKNOWN', 'row_hash': '077c0bd884c4d0941ce8497471e89c1e', 'full_name': 'Гаврилов Творимир Адамович', 'created_at': '2023-10-24', 'customer_id': '320'},{'level': 'warn', 'reason': 'invalid_descriptive_attributes', 'details': {'city_format': 'valid', 'email_format': 'valid', 'phone_format': 'invalid unknown', 'num_duplicates': 1, 'full_name_format': 'valid', 'created_at_format': 'yyyy-mm-dd'}}
+
+dwh.hub_customer: 700
+customer_hk,customer_id,load_datetime
+fe131d7f5a6b38b23cc967316c13dae2,255,2026-06-19 01:56:47.477037
+a684eceee76fc522773286a895bc8436,54,2026-06-19 01:56:47.477037
+2f55707d4193dc27118a0f19a1985716,493,2026-06-19 01:56:47.477037
+82161242827b703e6acf9c726942a1e4,175,2026-06-19 01:56:47.477037
+0fcbc61acd0479dc77e3cccc0f5ffca7,531,2026-06-19 01:56:47.477037
+
+dwh.hub_product: 600
+product_hk,product_id,load_datetime
+fe131d7f5a6b38b23cc967316c13dae2,255,2026-06-19 01:56:47.477037
+a684eceee76fc522773286a895bc8436,54,2026-06-19 01:56:47.477037
+2f55707d4193dc27118a0f19a1985716,493,2026-06-19 01:56:47.477037
+0fcbc61acd0479dc77e3cccc0f5ffca7,531,2026-06-19 01:56:47.477037
+82161242827b703e6acf9c726942a1e4,175,2026-06-19 01:56:47.477037
+
+dwh.hub_event: 1500
+event_hk,event_id,load_datetime
+fe131d7f5a6b38b23cc967316c13dae2,255,2026-06-19 01:56:47.477037
+2f55707d4193dc27118a0f19a1985716,493,2026-06-19 01:56:47.477037
+a684eceee76fc522773286a895bc8436,54,2026-06-19 01:56:47.477037
+0fcbc61acd0479dc77e3cccc0f5ffca7,531,2026-06-19 01:56:47.477037
+d1ee59e20ad01cedc15f5118a7626099,1370,2026-06-19 01:56:47.477037
+
+dwh.hub_order: 1200
+order_hk,order_id,load_datetime
+fe131d7f5a6b38b23cc967316c13dae2,255,2026-06-19 01:56:47.477037
+a684eceee76fc522773286a895bc8436,54,2026-06-19 01:56:47.477037
+2f55707d4193dc27118a0f19a1985716,493,2026-06-19 01:56:47.477037
+0fcbc61acd0479dc77e3cccc0f5ffca7,531,2026-06-19 01:56:47.477037
+cf004fdc76fa1a4f25f62e0eb5261ca3,368,2026-06-19 01:56:47.477037
+
+dwh.hub_payment: 1000
+payment_hk,payment_id,load_datetime
+fe131d7f5a6b38b23cc967316c13dae2,255,2026-06-19 01:56:47.477037
+a684eceee76fc522773286a895bc8436,54,2026-06-19 01:56:47.477037
+2f55707d4193dc27118a0f19a1985716,493,2026-06-19 01:56:47.477037
+0fcbc61acd0479dc77e3cccc0f5ffca7,531,2026-06-19 01:56:47.477037
+cf004fdc76fa1a4f25f62e0eb5261ca3,368,2026-06-19 01:56:47.477037
+
+dwh.sat_customer: 700
+customer_hk,load_datetime,full_name,email,phone,city,created_at,hash_diff
+428fca9bc1921c25c5121f9da7815cde,2026-06-19 01:56:47.609938,Милица Степановна Федорова,elizarabramov@yandex.ru,,ст. Вязьма,2023-08-27,e8980c17aecff0292c2b72632fcaf5ef
+ea5d2f1c4608232e07d3aa3d998e5135,2026-06-19 01:56:47.609938,Клавдия Никифоровна Самойлова,ktretjakova@ao.info,9803079055,г. Комсомольск-на-Амуре,2025-10-07,138ee22be9550dac2f866cf778c035f8
+eb163727917cbba1eea208541a643e74,2026-06-19 01:56:47.609938,Кондратий Владиленович Комаров,dementi_2006@yandex.ru,9741139461,к. Туапсе,2024-10-26,54a147e6721c81afcfcc70a3c24d3c93
+37a749d808e46495a8da1e5352d03cae,2026-06-19 01:56:47.609938,Сидорова Дарья Рубеновна,pestovkallistrat@yandex.ru,9415985367,с. Старая Русса,2026-04-23,4870fd987371496da5d664709e770813
+8757150decbd89b0f5442ca3db4d0e0e,2026-06-19 01:56:47.609938,Тимофеева Феврония Ниловна,ljubomir34@rao.org,9255365396,с. Бугуруслан,2024-03-09,30a7716330cc7f672e6aa4e50e78cb20
+
+dwh.sat_product: 600
+product_hk,load_datetime,product_name,category,price,currency,is_active,hash_diff
+65658fde58ab3c2b6e5132a39fae7cb9,2026-06-19 01:56:47.772717,Коллектив,Clothing,360.25,USD,False,fb3dab8848a9368b102a250c04d74b20
+fc490ca45c00b1249bbe3554a4fdf6fb,2026-06-19 01:56:47.772717,Доставать,Clothing,764.24,EUR,True,71cb70687e3e441e369774a640024b69
+f033ab37c30201f73f142449d037028d,2026-06-19 01:56:47.772717,Растеряться,Home,299.75,EUR,False,fee783dfc6ecab12852da6a9e3dc8ed7
+a9a1d5317a33ae8cef33961c34144f84,2026-06-19 01:56:47.772717,Упорно,Sports,806.03,EUR,True,8718326f3a11da5d00c03ccffb4871cb
+4e732ced3463d06de0ca9a15b6153677,2026-06-19 01:56:47.772717,Рай,Sports,1663.99,RUB,True,f026251c7f1bb3a66a00f049cf92046a
+
+dwh.sat_payment: 1000
+payment_hk,load_datetime,order_id,payment_method,amount,currency,payment_timestamp,hash_diff
+b5dc4e5d9b495d0196f61d45b26ef33e,2026-06-19 01:56:47.731458,858,,861.19,USD,2024-10-06 18:49:34,9e26cf42bac7dce3c3feeafb9317bcf2
+2ca65f58e35d9ad45bf7f3ae5cfd08f1,2026-06-19 01:56:47.731458,326,paypal,1975.47,USD,2025-08-03 14:19:42,9c66deb4ff90a726fa0c63622ef43ee4
+7f1171a78ce0780a2142a6eb7bc4f3c8,2026-06-19 01:56:47.731458,919,,1983.47,EUR,2024-07-05 04:09:45,5a30a053e3cb77384b023af9b9e98286
+2421fcb1263b9530df88f7f002e78ea5,2026-06-19 01:56:47.731458,513,bank_transfer,978.52,RUB,2025-08-29 01:35:33,e28775cb265a4f3ecc161c2e9df6c2b6
+8f468c873a32bb0619eaeb2050ba45d1,2026-06-19 01:56:47.731458,196,card,992.79,EUR,2025-11-04 05:50:52,d7212c5abc7539fd1b70925dbdfafef1
+
+dwh.sat_order: 1200
+order_hk,load_datetime,customer_id,product_id,quantity,unit_price,currency,order_timestamp,status,hash_diff
+c6bff625bdb0393992c9d4db0c6bbe45,2026-06-19 01:56:47.686851,151,235,1,109.91,EUR,2024-10-12 23:22:19,processing,1b81d460bfcc3c3928319c65c85804c1
+3d2d8ccb37df977cb6d9da15b76c3f3a,2026-06-19 01:56:47.686851,278,74,3,81.71,RUB,2024-08-17 08:34:55,cancelled,8d318c865478bd66c1df92c8e0b64b88
+e00da03b685a0dd18fb6a08af0923de0,2026-06-19 01:56:47.686851,126,451,2,27.58,USD,2025-03-12 13:19:35,processing,80eb00c66160cab75accb743acbeeafa
+1587965fb4d4b5afe8428a4a024feb0d,2026-06-19 01:56:47.686851,385,359,5,104.89,EUR,2025-12-20 08:05:31,processing,c822802470c7f0ea578ac189e9ef614f
+a760880003e7ddedfef56acb3b09697f,2026-06-19 01:56:47.686851,,577,5,336.83,EUR,2026-03-08 08:04:01,completed,e2b85ab44cf7599b913baab7dc8db856
+
+dwh.sat_event: 1500
+event_hk,load_datetime,customer_id,event_type,event_timestamp,product_id,hash_diff
+856fc81623da2150ba2210ba1b51d241,2026-06-19 01:56:47.645632,298,logout,2025-08-19 14:21:50,229,cdf982726ce7c1c309c59ae8e6e41dc1
+58238e9ae2dd305d79c2ebc8c1883422,2026-06-19 01:56:47.645632,742,purchase,2026-03-06 15:54:56,370,fb4939e37aad394fa7da5d7e11f52f86
+7dcd340d84f762eba80aa538b0c527f7,2026-06-19 01:56:47.645632,444,view,2024-10-19 16:39:25,637,8e3260e29fa86fcabc509552919d34ff
+5d616dd38211ebb5d6ec52986674b6e4,2026-06-19 01:56:47.645632,17,click,2024-09-08 07:26:37,355,075549d4ca796b249fe40257e5f9ec04
+ca46c1b9512a7a8315fa3c5a946e8265,2026-06-19 01:56:47.645632,530,view,2026-02-05 04:57:02,585,66b6a3dc83607fbd0cefcea6396f7e04
+
+dwh.link_payment_order: 931
+link_hk,payment_hk,order_hk,load_datetime
+64c7eaa57ea7336066a3edf7ff57057c,b5dc4e5d9b495d0196f61d45b26ef33e,a67f096809415ca1c9f112d96d27689b,2026-06-19 01:56:47.937211
+0ea80e89dc4f20759aa07af65c9aa883,2ca65f58e35d9ad45bf7f3ae5cfd08f1,a666587afda6e89aec274a3657558a27,2026-06-19 01:56:47.937211
+1aefd1ebfc41b71132b7e78798c6238e,7f1171a78ce0780a2142a6eb7bc4f3c8,3e89ebdb49f712c7d90d1b39e348bbbf,2026-06-19 01:56:47.937211
+68f798b9d54541daf8058b5b3319fcf8,2421fcb1263b9530df88f7f002e78ea5,3dc4876f3f08201c7c76cb71fa1da439,2026-06-19 01:56:47.937211
+1816325230cb8b1fae82de49b701aa73,8f468c873a32bb0619eaeb2050ba45d1,084b6fbb10729ed4da8c3d3f5a3ae7c9,2026-06-19 01:56:47.937211
+
+dwh.link_event_customer_product: 1244
+link_hk,event_hk,customer_hk,product_hk,load_datetime
+c55a71e3fba327cc28351134784fe4af,856fc81623da2150ba2210ba1b51d241,26e359e83860db1d11b6acca57d8ea88,57aeee35c98205091e18d1140e9f38cf,2026-06-19 01:56:47.807250
+59c830a85c77f65b522e6ef67b4b6804,5d616dd38211ebb5d6ec52986674b6e4,70efdf2ec9b086079795c442636b55fb,82cec96096d4281b7c95cd7e74623496,2026-06-19 01:56:47.807250
+abf3f5c01e339ce5d125c25286897228,ca46c1b9512a7a8315fa3c5a946e8265,d64a340bcb633f536d56e51874281454,a9a1d5317a33ae8cef33961c34144f84,2026-06-19 01:56:47.807250
+e5101f05760e91a88918554d7dff98e1,298923c8190045e91288b430794814c4,b9228e0962a78b84f3d5d92f4faa000b,92cc227532d17e56e07902b254dfad10,2026-06-19 01:56:47.807250
+772afcbe58d06d808a212bf4e3821011,c32d9bf27a3da7ec8163957080c8628e,a5bfc9e07964f8dddeb95fc584cd965d,f4b9ec30ad9f68f89b29639786cb62ef,2026-06-19 01:56:47.807250
+
+dwh.link_order_customer_product: 998
+link_hk,order_hk,customer_hk,product_hk,load_datetime
+fb72ffabbf18cf84f6b17877d3dac4c8,c6bff625bdb0393992c9d4db0c6bbe45,a8f15eda80c50adb0e71943adc8015cf,577ef1154f3240ad5b9b413aa7346a1e,2026-06-19 01:56:47.882091
+a152c424a63dedee7201aa789ecb448b,3d2d8ccb37df977cb6d9da15b76c3f3a,07cdfd23373b17c6b337251c22b7ea57,ad61ab143223efbc24c7d2583be69251,2026-06-19 01:56:47.882091
+87fa8baaee84ff72e83a32ed4e0bc4ca,e00da03b685a0dd18fb6a08af0923de0,069059b7ef840f0c74a814ec9237b6ec,941e1aaaba585b952b62c14a3a175a61,2026-06-19 01:56:47.882091
+c472cac808117f4c4787989cf4f32f45,1587965fb4d4b5afe8428a4a024feb0d,dc912a253d1e9ba40e2c597ed2376640,c058f544c737782deacefa532d9add4c,2026-06-19 01:56:47.882091
+7dc1f6eaa1d6b6f523787ec2173a52c8,310dcbbf4cce62f762a2aaa148d556bd,bf8229696f7a3bb4700cfddef19fa23f,735b90b4568125ed6c3f678819b6e058,2026-06-19 01:56:47.882091
+
